@@ -29,6 +29,7 @@ IRON    = 7
 WOOD    = 8
 HEARTS  = 9
 FIRE    = 10
+BRICK   = 11
 
 #a dictionary linking resources to colours
 textures =   {
@@ -42,7 +43,8 @@ textures =   {
                 IRON    : pygame.image.load('textures/IRON.png'),
                 WOOD    : pygame.image.load('textures/WOOD.png'),
                 HEARTS  : pygame.image.load('textures/HEART.png'),
-                FIRE    : pygame.image.load('textures/FIRE.png')
+                FIRE    : pygame.image.load('textures/FIRE.png'),
+                BRICK   : pygame.image.load('textures/BRICK.png')
              }
 
 inventory =   {
@@ -53,6 +55,7 @@ inventory =   {
                 IRON   : 0 ,
                 WOOD   : 0 ,
                 FIRE   : 0 ,
+                BRICK  : 0 ,
                 HEARTS : 20
             }
 
@@ -62,18 +65,19 @@ controls = {
                 GRASS   : 50,  #event 50 is the '2' key, etc.
                 #WATER   : 51,
                 #COAL    : 52,
-                WOOD    : 52,
-                FIRE    : 53,
+                WOOD    : 52, # 4
+                FIRE    : 53, # 5
                 #SAND    : 55,
                 #GLASS   : 56,
-                ROCK    : 51,
+                ROCK    : 51, # 3
                 #STONE   : 48,
-                #BRICK   : 45,
+                BRICK   : 54, # 6
                 #DIAMOND : 61
             }
 
 craft =    {
-                FIRE : { WOOD : 2, ROCK : 2 }
+                FIRE : { WOOD : 2, ROCK : 2 },
+                BRICK: { ROCK : 3 }
             }
 #useful game dimensions
 TILESIZE  = 40
@@ -81,7 +85,7 @@ MAPWIDTH  = 30
 MAPHEIGHT = 20
 
 
-resources = [DIRT, GRASS, COAL, ROCK, IRON, WOOD, FIRE, HEARTS]
+resources = [DIRT, GRASS, COAL, ROCK, IRON, WOOD, FIRE, BRICK, HEARTS]
 tilemap = [ [DIRT for w in range(MAPWIDTH)] for h in range(MAPHEIGHT) ] 
 #set up the display
 pygame.init()
@@ -225,6 +229,16 @@ while True:
                             if inventory[WOOD] > 0:
                                 inventory[WOOD] -= 1
                                 tilemap[playerPos[1]][playerPos[0]] = WOOD
+                        if (event.key == K_5):
+                            currentTile = tilemap[playerPos[1]][playerPos[0]]
+                            if inventory[FIRE] > 0:
+                                inventory[FIRE] -= 1
+                                tilemap[playerPos[1]][playerPos[0]] = FIRE
+                        if (event.key == K_6):
+                            currentTile = tilemap[playerPos[1]][playerPos[0]]
+                            if inventory[BRICK] > 0:
+                                inventory[BRICK] -= 1
+                                tilemap[playerPos[1]][playerPos[0]] = BRICK
 
    #loop through each row
     for row in range(MAPHEIGHT):
