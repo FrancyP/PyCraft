@@ -33,18 +33,18 @@ BRICK   = 11
 
 #a dictionary linking resources to colours
 textures =   {
-                DIRT    : pygame.image.load('textures/dirt.png'),
-                GRASS   : pygame.image.load('textures/grass.png'),
-                WATER   : pygame.image.load('textures/water.png'),
-                COAL    : pygame.image.load('textures/coal.png'),
-                ROCK    : pygame.image.load('textures/rock.png'),
-                LAVA    : pygame.image.load('textures/lava.png'),
-                BEDROCK : pygame.image.load('textures/bedrock.png'),
-                IRON    : pygame.image.load('textures/iron.png'),
-                WOOD    : pygame.image.load('textures/wood.png'),
-                HEARTS  : pygame.image.load('textures/heart.png'),
-                FIRE    : pygame.image.load('textures/fire.png'),
-                BRICK   : pygame.image.load('textures/brick.png')
+                DIRT    : pygame.image.load('textures/DIRT.png'),
+                GRASS   : pygame.image.load('textures/GRASS.png'),
+                WATER   : pygame.image.load('textures/WATER.png'),
+                COAL    : pygame.image.load('textures/COAL.png'),
+                ROCK    : pygame.image.load('textures/ROCK.png'),
+                LAVA    : pygame.image.load('textures/LAVA.png'),
+                BEDROCK : pygame.image.load('textures/BEDROCK.png'),
+                IRON    : pygame.image.load('textures/IRON.png'),
+                WOOD    : pygame.image.load('textures/WOOD.png'),
+                HEARTS  : pygame.image.load('textures/HEART.png'),
+                FIRE    : pygame.image.load('textures/FIRE.png'),
+                BRICK   : pygame.image.load('textures/BRICK.png')
              }
 
 inventory =   {
@@ -92,7 +92,7 @@ pygame.init()
 
 DISPLAYSURF = pygame.display.set_mode((MAPWIDTH*TILESIZE, MAPHEIGHT*TILESIZE+50))
 
-PLAYER = pygame.image.load('player.png').convert_alpha()
+PLAYER = pygame.image.load('faces/player.png').convert_alpha()
 playerPos = [0, 0]
 
 INVFONT = pygame.font.Font('FreeSansBold.ttf', 18)
