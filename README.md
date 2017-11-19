@@ -1,16 +1,18 @@
 # PyCraft
-A rogue-like game similiar to Minecraft
+My first PyGame test
 
-# Download
-## Ubuntu
+#Requirements
+* PyGame Python2
+## Download
+### Ubuntu
 $ sudo apt-get install python-pygame
 
-## Mac / Windows
+### Mac / Windows
 http://www.pygame.org/download.shtml
 
-## Textures
+### Textures
 https://pycraftminecraft.wordpress.com/download/
 ### Note: Save the images in a "textures" folder
 
-# Run
+# Start the game
 python2 main.py
